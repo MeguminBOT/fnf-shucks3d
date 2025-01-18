@@ -172,18 +172,20 @@ class MainMenuState extends MusicBeatState
     function startButtonPress()
     {
         persistentUpdate = false;
-        startButtonSprite.animation.play('idleOpen');
+        startButtonSprite.animation.play('idleOpen', true);
+        FlxG.mouse.visible = false;
+
 		var diff = selectedDifficulty.toLowerCase();
 		if (diff == 'hard' || diff == 'insane') {
 			PlayState.SONG = Song.loadFromJson('shucks-' + diff, 'shucks');
             LoadingState.prepareToSong();
-            new FlxTimer().start(1.5, function(tmr:FlxTimer) {
+            new FlxTimer().start(0.1, function(tmr:FlxTimer) {
                 FlxTween.tween(FlxG.camera, {zoom: 15}, 1, {type: FlxTween.PERSIST, ease: FlxEase.cubeIn, onComplete: goToPlayState});
             });
 		} else {
 			PlayState.SONG = Song.loadFromJson('shucks', 'shucks');
             LoadingState.prepareToSong();
-            new FlxTimer().start(1.5, function(tmr:FlxTimer) {
+            new FlxTimer().start(0.1, function(tmr:FlxTimer) {
                 FlxTween.tween(FlxG.camera, {zoom: 15}, 1, {type: FlxTween.PERSIST, ease: FlxEase.cubeIn, onComplete: goToPlayState});
             });
 		}
