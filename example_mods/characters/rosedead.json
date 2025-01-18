@@ -1,0 +1,36 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle",
+			"indices": []
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/rosedead",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "rose",
+	"flip_x": false,
+	"healthbar_colors": [
+		250,
+		226,
+		73
+	],
+	"camera_position": [
+		90,
+		240
+	],
+	"sing_duration": 6,
+	"scale": 0.73,
+	"_editor_isPlayer": false
+}

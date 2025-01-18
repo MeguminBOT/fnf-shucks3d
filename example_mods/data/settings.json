@@ -1,0 +1,31 @@
+[
+	{
+		"save": "auxEnabled",
+		"name": "Aux Power Mechanics",
+		"type": "bool",
+		"description": "Aux Power is a dynamic mechanic that enables a chargeable bar,\nWhich can be used to prevent effects of various mechanics for up to 10 seconds\nMechanics last for 15 seconds.\nDisabling this also disables any other Aux settings.",
+		"value": true
+	},
+	{
+		"save": "auxKeybind",
+		"name": "Aux Power Keybind:",
+        "description": "Sets which key to use for the Aux Power",
+		"type": "keybind",
+		"keyboard": "SHIFT",
+        "format": "[%v]"
+	},
+    {
+		"save": "auxScroll",
+		"name": "Aux Mechanic: Scroll Decrease",
+		"type": "bool",
+		"description": "Toggle Scroll Decrease Mechanic",
+		"value": true
+	},
+    {
+		"save": "auxObstruct",
+		"name": "Aux Mechanic: Obstruct Vision",
+		"type": "bool",
+		"description": "Toggle Scroll Decrease Mechanic",
+		"value": true
+	}
+]
