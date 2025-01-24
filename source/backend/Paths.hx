@@ -18,9 +18,14 @@ import flash.media.Sound;
 
 import haxe.Json;
 
-
 #if MODS_ALLOWED
 import backend.Mods;
+#end
+
+#if hxvlc
+import hxvlc.flixel.FlxVideo;
+import hxvlc.flixel.FlxVideoSprite;
+import objects.VideoSprite;
 #end
 
 @:access(openfl.display.BitmapData)
@@ -148,6 +153,25 @@ class Paths
 		if(FileSystem.exists(file)) return file;
 		#end
 		return 'assets/videos/$key.$VIDEO_EXT';
+	}
+
+	// A really bad "preload" function for videos, I'm both too busy and lazy to do it properly, 
+	// but it does it's core job (I think? the stutters went away at least..) --Lulu
+	static public function preloadVideos(videoKeys:Array<String>):Void
+	{
+		for (key in videoKeys)
+		{
+			var file:String = video(key);
+			#if sys
+			if (FileSystem.exists(file))
+			#else
+			if (OpenFlAssets.exists(file))
+			#end
+			{
+				var videoSprite = new FlxVideoSprite();
+				videoSprite.load(file);
+			}
+		}
 	}
 
 	inline static public function sound(key:String, ?modsAllowed:Bool = true):Sound
