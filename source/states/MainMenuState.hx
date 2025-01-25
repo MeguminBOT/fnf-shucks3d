@@ -166,7 +166,6 @@ class MainMenuState extends MusicBeatState
         difficultyText.antialiasing = ClientPrefs.data.antialiasing;
 		difficultyText.y = sprite.y - 24;
         add(difficultyText);
-
     }
 
     function startButtonPress()

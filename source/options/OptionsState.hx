@@ -15,7 +15,7 @@ class OptionsState extends MusicBeatState
 	];
 	private var grpOptions:FlxTypedGroup<Alphabet>;
 	private static var curSelected:Int = 0;
-	public static var menuBG:FlxSprite;
+	public static var bg:FlxSprite;
 	public static var onPlayState:Bool = false;
 
 	function openSelectedSubstate(label:String) {
@@ -45,12 +45,13 @@ class OptionsState extends MusicBeatState
 		DiscordClient.changePresence("Options Menu", null);
 		#end
 
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		bg = new FlxSprite(0, 0).loadGraphic(Paths.image('bg'));
+		bg.frames = Paths.getSparrowAtlas('bg');
+		bg.animation.addByPrefix('play', 'idle', 24, true);
 		bg.antialiasing = ClientPrefs.data.antialiasing;
-		bg.color = 0xFFea71fd;
+		bg.alpha = 0.25;
 		bg.updateHitbox();
-
-		bg.screenCenter();
+		bg.animation.play('play');
 		add(bg);
 
 		grpOptions = new FlxTypedGroup<Alphabet>();
