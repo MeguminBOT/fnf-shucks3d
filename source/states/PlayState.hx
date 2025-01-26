@@ -618,7 +618,7 @@ class PlayState extends MusicBeatState
 		super.create();
 		Paths.clearUnusedMemory();
 
-		var videosToPreload:Array<String> = ["intro", "start", "shutyertrap", "shucks", "end", "spin"]; // Add your video keys here
+		var videosToPreload:Array<String> = ["intro", "start", "shutyertrap", "shucks", "end", "spin"];
 		Paths.preloadVideos(videosToPreload);
 
 		cacheCountdown();
